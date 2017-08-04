@@ -91,6 +91,8 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
 
     const titleStyle = details.options.headerTitleStyle;
     const color = details.options.headerTintColor;
+    const titleMarginLeft = details.options.titleMarginLeft;
+    const titleMarginRight = details.options.titleMarginRight;
 
     // On iOS, width of left/right components depends on the calculated
     // size of the title.
@@ -109,7 +111,7 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
     return (
       <HeaderTitle
         onLayout={onLayoutIOS}
-        style={[color ? { color } : null, titleStyle]}
+        style={[color ? { color } : null, titleStyle, titleMarginLeft? {left: TITLE_OFFSET - titleMarginLeft} : null, titleStyle, titleMarginRight? {right:  TITLE_OFFSET - titleMarginRight} : null]}
       >
         {titleString}
       </HeaderTitle>
@@ -339,7 +341,8 @@ const styles = StyleSheet.create({
     right: TITLE_OFFSET,
     top: 0,
     position: 'absolute',
-    alignItems: Platform.OS === 'ios' ? 'center' : 'flex-start',
+    // alignItems: Platform.OS === 'ios' ? 'center' : 'flex-start',
+    alignItems: 'center',
   },
   left: {
     left: 0,
