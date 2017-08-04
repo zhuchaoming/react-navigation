@@ -111,7 +111,7 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
     return (
       <HeaderTitle
         onLayout={onLayoutIOS}
-        style={[color ? { color } : null, titleStyle, titleMarginLeft? {left: TITLE_OFFSET - titleMarginLeft} : null, titleStyle, titleMarginRight? {right:  TITLE_OFFSET - titleMarginRight} : null]}
+        style={[color ? { color } : null, titleStyle, titleMarginLeft? {left: TITLE_OFFSET - titleMarginLeft} : null, titleMarginRight? {right:  TITLE_OFFSET - titleMarginRight} : null]}
       >
         {titleString}
       </HeaderTitle>
